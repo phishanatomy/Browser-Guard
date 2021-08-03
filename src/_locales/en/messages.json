@@ -1,0 +1,265 @@
+{
+  "extensionName": {
+    "message": "Browser Guard"
+  },
+
+  "extensionDescription": {
+    "message": "Protect browsers from accessing untrusted websites."
+  },
+
+  "extensionTagline": {
+    "message": "A browser extension for the paranoid."
+  },
+
+  "copy": {
+    "message": "Copy"
+  },
+
+  "backToSafety": {
+    "message": "Back to safety"
+  },
+
+  "trustAndContinue": {
+    "message": "Trust and continue"
+  },
+
+  "tempTrustAndContinue": {
+    "message": "Temporarily trust and continue"
+  },
+
+  "alsoTrustSubdomains": {
+    "message": "Also trust subdomains"
+  },
+
+  "details": {
+    "message": "Details"
+  },
+
+  "requestUrl": {
+    "message": "Request URL:"
+  },
+
+  "originUrl": {
+    "message": "Origin URL:"
+  },
+
+  "method": {
+    "message": "Method:"
+  },
+
+  "urlClassifications": {
+    "message": "URL Classifications:"
+  },
+
+  "untrustedDomain": {
+    "message": "Untrusted domain"
+  },
+
+  "untrustedDomainDesc": {
+    "message": "A request to this URL was blocked because the domain or subdomian is not trusted."
+  },
+
+  "unknownUrl": {
+    "message": "Unknown URL"
+  },
+
+  "trustedDomains": {
+    "message": "Trusted Domains"
+  },
+
+  "settings": {
+    "message": "Settings"
+  },
+
+  "about": {
+    "message": "About"
+  },
+
+  "domain": {
+    "message": "Domain"
+  },
+
+  "trustSubdomains": {
+    "message": "Trust Subdomains"
+  },
+
+  "expires": {
+    "message": "Expires"
+  },
+
+  "options": {
+    "message": "Options"
+  },
+
+  "enterDomain": {
+    "message": "Enter new domain to trust..."
+  },
+
+  "never": {
+    "message": "Never"
+  },
+
+  "minute": {
+    "message": "minute"
+  },
+
+  "minutes": {
+    "message": "minutes"
+  },
+
+  "hours": {
+    "message": "hours"
+  },
+
+  "addTrust": {
+    "message": "Add Trust"
+  },
+
+  "trustSettings": {
+    "message": "Trust Settings"
+  },
+
+  "trustSubdomainsDefault": {
+    "message": "Trust subdomains by default"
+  },
+
+  "checkTrustSubdomains": {
+    "message": "Check the \"Trust Subdomains\" checkbox by default."
+  },
+
+  "ignoreWwwSubdomain": {
+    "message": "Ignore \"www\" subdomain"
+  },
+
+  "removeWwwDesc": {
+    "message": "Remove \"www.\" from domains before trusting them and ignore \"www\" subdomains such that trusting \"example.com\" also trusts \"www.example.com\"."
+  },
+
+  "tempTrustDuration": {
+    "message": "Temporary trust duration"
+  },
+
+  "tempTrustDurationDesc": {
+    "message": "The duration to temporarily trust domains if the \"Temporarily trust and continue\" button is clicked."
+  },
+
+  "tempTrustDefault": {
+    "message": "Temporarily trust by default"
+  },
+
+  "tempTrustDefaultDesc": {
+    "message": "All settings will use the \"Temporary trust default duration\" setting by default (e.g. \"Never\" won't be selected by default)."
+  },
+
+  "importExportSync": {
+    "message": "Import, Export, and Sync"
+  },
+
+  "importTrustedDomains": {
+    "message": "Import trusted domains"
+  },
+
+  "importTrustedDomainsDesc": {
+    "message": "Import trusted domains from a file."
+  },
+
+  "exportTrustedDomains": {
+    "message": "Export trusted domains"
+  },
+
+  "exportTrustedDomainsDesc": {
+    "message": "Export trusted domains to a file."
+  },
+
+  "resetSettingsTitle": {
+    "message": "Reset Settings"
+  },
+
+  "resetTrustedDomains": {
+    "message": "Reset trusted domains"
+  },
+
+  "resetTrustedDomainsDesc": {
+    "message": "Remove all trusted domains and add default trusted domains (if any)."
+  },
+
+  "resetSettings": {
+    "message": "Reset settings"
+  },
+
+  "resetSettingsDesc": {
+    "message": "Reset all settings to default (excluding trusted domains)."
+  },
+
+  "version": {
+    "message": "Version"
+  },
+
+  "viewSource": {
+    "message": "View the source on"
+  },
+
+  "createdBy": {
+    "message": "Created by"
+  },
+
+  "for": {
+    "message": "for"
+  },
+
+  "licenseBlock1": {
+    "message": "This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version."
+  },
+
+  "licenseBlock2": {
+    "message": "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details."
+  },
+
+  "licenseBlock3": {
+    "message": "You should have received a copy of the GNU General Public License along with this program. If not, see"
+  },
+
+  "removeTrust": {
+    "message": "Remove Trust"
+  },
+
+  "noTrustedDomainsFound": {
+    "message": "No trusted domains found."
+  },
+
+  "domainNotTrusted": {
+    "message": "This domain is not trusted."
+  },
+
+  "domainTempTrusted": {
+    "message": "This domain is temporarily trusted."
+  },
+
+  "domainIsTrusted": {
+    "message": "This domain is trusted."
+  },
+
+  "domainIsBrowser": {
+    "message": "This is a secure browser page."
+  },
+
+  "domainTrustedBuRule": {
+    "message": "Domain is trusted by this rule:"
+  },
+
+  "domainIsExtension": {
+    "message": "This is an extension page."
+  },
+
+  "trustExpiresIn": {
+    "message": "Trust expires in"
+  },
+
+  "trustTemporarily": {
+    "message": "Trust temporarily"
+  },
+
+  "trustPermanently": {
+    "message": "Trust permanently"
+  }
+}

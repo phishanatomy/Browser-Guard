@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Browser Guard</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="stylesheet" href="../css/popup.css" />
+    <script src="../ts/l10n.js"></script>
+    <script src="../ts/config.js"></script>
+    <script src="../ts/common.js"></script>
+    <script src="../ts/popup.js"></script>
+  </head>
+  <body>
+    <div id="heading-wrap">
+      <div id="heading">
+        <div id="heading-logo-wrap">
+          <img id="heading-logo" src="../art/browser-guard.svg" />
+        </div>
+        <div id="heading-text-wrap">
+          <span>Browser Guard</span>
+        </div>
+        <div id="heading-settings-wrap">
+          <a href="settings.html?popup=true">
+            <img id="heading-settings" src="../art/cog.svg" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div id="main-image-wrap">
+        <svg id="main-image" width="100%" height="100%" viewBox="0 0 256 256">
+          <g transform="matrix(0.383985,0,0,0.383985,244.115,233.325)">
+            <path
+              id="main-image-left"
+              d="M0,-548.695L-302.396,-603.125L-302.396,54.539C-302.396,54.539 -128.928,13.396 -38.928,-190.602C11.964,-305.958 0,-548.695 0,-548.695Z"
+              fill="#d5d5d5"
+            />
+          </g>
+          <g transform="matrix(-0.383985,0,0,0.383985,11.8843,233.325)">
+            <path
+              id="main-image-right"
+              d="M0,-548.695L-302.396,-603.125L-302.396,54.539C-302.396,54.539 -128.928,13.396 -38.928,-190.602C11.964,-305.958 0,-548.695 0,-548.695Z"
+              fill="#eaeaea"
+            />
+          </g>
+        </svg>
+      </div>
+      <div id="domain-trust-label"></div>
+      <div id="domain-expires-label"></div>
+      <div id="domain-trust-rule-label">
+        <table id="domain-trust-rule-table">
+          <div id="domain-trust-rule-text">__MSG_domainTrustedBuRule__</div>
+          <tr>
+            <td class="domain-trust-header">__MSG_domain__</td>
+            <td id="domain-trust-rule-domain" class="domain-trust-value"></td>
+          </tr>
+          <tr>
+            <td class="domain-trust-header">__MSG_trustSubdomains__</td>
+            <td
+              id="domain-trust-rule-trust-subdomains"
+              class="domain-trust-value"
+            ></td>
+          </tr>
+          <tr>
+            <td class="domain-trust-header">__MSG_expires__</td>
+            <td id="domain-trust-rule-expired" class="domain-trust-value"></td>
+          </tr>
+        </table>
+      </div>
+      <div id="trust-action-group">
+        <button class="action-button" id="to-safety-button">
+          __MSG_backToSafety__
+        </button>
+        <button class="action-button" id="temp-trust-button">
+          __MSG_trustTemporarily__
+        </button>
+        <button class="action-button" id="trust-domain-button">
+          __MSG_trustPermanently__
+        </button>
+        <button class="action-button" id="remove-trust-button">
+          __MSG_removeTrust__
+        </button>
+        <div id="trust-subdomains-wrap">
+          <input type="checkbox" id="trust-subdomains" />
+          <label for="trust-subdomains">__MSG_alsoTrustSubdomains__</label>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

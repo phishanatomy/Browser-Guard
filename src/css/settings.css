@@ -1,0 +1,270 @@
+/* Overrides */
+
+#content {
+  border-top: none;
+}
+
+.popup #content {
+  width: 600px;
+  overflow-x: hidden;
+}
+
+#content.pad {
+  margin-right: 17px;
+}
+
+/* Settings Tabs */
+
+#tabs-wrap {
+  position: relative;
+  top: -15px;
+  left: -15px;
+  width: calc(100% + 30px);
+  background-color: #fff;
+  white-space: nowrap;
+  border-radius: 5px;
+  background-color: #fafafa;
+}
+
+.tab {
+  border-bottom: 1px solid #ccc;
+  padding: 15px;
+  display: inline-block;
+  width: 33.333%;
+  box-sizing: border-box;
+  user-select: none;
+  -moz-user-select: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: #fff;
+  vertical-align: middle;
+  border-top: 1px solid #ccc;
+}
+
+.tab.selected {
+  border-top: 2px solid #0abbff;
+  background-color: #fafafa;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #fafafa;
+  padding: 14px 15px 15px 15px;
+}
+
+.tab-2.selected {
+  border-left: 1px solid #ccc;
+  padding: 14px 15px 15px 14px;
+}
+
+.tab-3.selected {
+  border-left: 1px solid #ccc;
+  border-right: none;
+  padding: 14px 15px 15px 14px;
+}
+
+.tab-1 {
+  border-top-left-radius: 5px;
+}
+
+.tab-2,
+.tab-3 {
+  margin-left: -4px;
+}
+
+.tab-3 {
+  border-top-right-radius: 5px;
+}
+
+.tab:not(.selected):hover {
+  padding-top: 14px;
+  border-top: 2px solid #ccc;
+  background-color: #f8f8f8;
+}
+
+@media (max-width: 1024px) {
+  #content {
+    margin: 50px auto 0 auto;
+    border-radius: initial;
+  }
+
+  #tabs-wrap {
+    padding-top: 14px;
+    background-color: white;
+    border-top: 1px solid #ccc;
+    border-radius: initial;
+  }
+
+  .tab {
+    border-top: none;
+  }
+
+  .tab-1 {
+    border-top-left-radius: initial;
+  }
+
+  .tab-3 {
+    border-top-right-radius: initial;
+  }
+}
+
+/* Sections */
+
+.section {
+  display: none;
+}
+
+.section.selected {
+  display: block;
+}
+
+/* Trusted Domain List */
+
+#trusted-domains-list {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.trusted-domain-list-heading-field {
+  text-transform: uppercase;
+  font-size: 10px;
+  vertical-align: bottom;
+}
+
+.trusted-domain-list-heading-row {
+  border-bottom: 1px solid #ccc;
+}
+
+.trusted-domain-list-heading-row,
+.trusted-domain-list-row {
+  display: table-row;
+}
+
+.trusted-domain-list-row {
+  border-radius: 5px;
+}
+
+.trusted-domain-list-row:hover {
+  background-color: #eee;
+}
+
+.trusted-domain-list-heading-field,
+.trusted-domain-list-row-domain,
+.trusted-domain-list-row-subdomain,
+.trusted-domain-list-row-expires,
+.trusted-domain-list-row-options {
+  display: table-cell;
+}
+
+.trusted-domain-list-row-domain,
+.trusted-domain-list-row-subdomain,
+.trusted-domain-list-row-expires,
+.trusted-domain-list-row-options {
+  padding: 3px 0;
+}
+
+#trust-subdomain-header {
+  width: 70px;
+  text-align: center;
+  padding: 0 10px;
+  vertical-align: bottom;
+}
+
+.trusted-domain-list-row-subdomain,
+.trusted-domain-list-row-options,
+.trusted-domain-list-row-expires {
+  text-align: center;
+}
+
+.trusted-domain-list-row-expires-text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100px;
+  overflow: hidden;
+  display: block;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+#edit-header {
+  width: 100px;
+  text-align: center;
+}
+
+#expires-header {
+  width: 100px;
+  text-align: center;
+}
+
+.trusted-domain-list-domain-input {
+  width: 100%;
+  background-color: #fafafa;
+  border: 0;
+  margin-left: 5px;
+}
+
+#new-trusted-domain-input {
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+#new-trusted-domain-input:not(:active):not(:focus) {
+  border: 1px solid #ccc;
+}
+
+/* Settings Section */
+
+.setting-group-title {
+  margin-top: 10px;
+  border-bottom: 1px solid #ccc;
+  font-size: 20px;
+  color: #5b5b5b;
+  text-transform: uppercase;
+}
+
+.setting-group-title:not(:first-of-type) {
+  margin-top: 30px;
+}
+
+.setting-wrap {
+  padding: 20px 0 0 10px;
+}
+
+.setting-description {
+  font-size: 13px;
+  color: #5b5b5b;
+  padding-top: 5px;
+}
+
+#import-domains-file {
+  display: block;
+  padding-bottom: 10px;
+}
+
+/* About Section */
+
+#about-section {
+  text-align: center;
+}
+
+#main-image-wrap {
+  padding: 20px 0;
+}
+
+#main-image {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  display: block;
+}
+
+#license {
+  width: 100%;
+  max-width: 550px;
+  text-align: left;
+  margin: 0 auto;
+}
+
+#license span,
+#license a {
+  font-family: 'Courier New', Courier, monospace;
+}

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Browser Guard - Settings</title>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="../art/browser-guard.svg" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="stylesheet" href="../css/settings.css" />
+    <script src="../ts/l10n.js"></script>
+    <script src="../ts/config.js"></script>
+    <script src="../ts/common.js"></script>
+    <script src="../ts/settings.js"></script>
+  </head>
+  <body>
+    <div id="heading-wrap">
+      <div id="heading">
+        <div id="heading-logo-wrap">
+          <img id="heading-logo" src="../art/browser-guard.svg" />
+        </div>
+        <div id="heading-text-wrap">
+          <span>__MSG_extensionName__ - __MSG_settings__</span>
+        </div>
+        <div id="heading-settings-wrap" class="hide">
+          <a href="settings.html" target="_blank">
+            <img id="heading-settings" src="../art/cog.svg" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div id="tabs-wrap">
+        <div
+          class="tab tab-1 selected"
+          id="trusted-domains-tab"
+          data-bind="trusted-domains-section"
+        >
+          __MSG_trustedDomains__
+        </div>
+        <div class="tab tab-2" id="settings-tab" data-bind="settings-section">
+          __MSG_settings__
+        </div>
+        <div class="tab tab-3" id="about-tab" data-bind="about-section">
+          __MSG_about__
+        </div>
+      </div>
+
+      <!-- Trusted Domains section -->
+      <div class="section selected" id="trusted-domains-section">
+        <div id="trusted-domains-list">
+          <div class="trusted-domain-list-heading-row">
+            <div
+              class="trusted-domain-list-heading-field"
+              id="trusted-domain-header"
+            >
+              __MSG_domain__
+            </div>
+            <div
+              class="trusted-domain-list-heading-field"
+              id="trust-subdomain-header"
+            >
+              __MSG_trustSubdomains__
+            </div>
+            <div class="trusted-domain-list-heading-field" id="expires-header">
+              __MSG_expires__
+            </div>
+            <div class="trusted-domain-list-heading-field" id="edit-header">
+              __MSG_options__
+            </div>
+          </div>
+          <div id="add-trusted-domain-form" class="trusted-domain-list-row">
+            <div class="trusted-domain-list-row-domain">
+              <input
+                placeholder="__MSG_enterDomain__"
+                type="text"
+                id="new-trusted-domain-input"
+                class="trusted-domain-list-domain-input"
+              />
+            </div>
+            <div class="trusted-domain-list-row-subdomain">
+              <input type="checkbox" id="new-trust-subdomain-input" />
+            </div>
+            <div class="trusted-domain-list-row-expires">
+              <select id="new-expires-input">
+                <option value="0">__MSG_never__</option>
+                <option value="1">1 __MSG_minute__</option>
+                <option value="5">5 __MSG_minutes__</option>
+                <option value="10">10 __MSG_minutes__</option>
+                <option value="30">30 __MSG_minutes__</option>
+                <option value="60">60 __MSG_minutes__</option>
+                <option value="90">90 __MSG_minutes__</option>
+                <option value="1440">24 __MSG_hours__</option>
+              </select>
+            </div>
+            <div class="trusted-domain-list-row-options">
+              <button id="add-trust-button">+ __MSG_addTrust__</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Settings section -->
+      <div class="section" id="settings-section">
+        <div id="settings-wrap">
+          <div class="setting-group-title">__MSG_trustSettings__</div>
+
+          <!-- Trust subdomains by default -->
+          <div class="setting-wrap">
+            <input
+              type="checkbox"
+              id="trust-subdomains-setting"
+              data-bind-setting="trustSubdomainsByDefault"
+            />
+            <label for="trust-subdomains-setting" class="setting-label"
+              >__MSG_trustSubdomainsDefault__</label
+            >
+            <div class="setting-description">__MSG_checkTrustSubdomains__</div>
+          </div>
+
+          <!-- Ignore "www" subdomain -->
+          <div class="setting-wrap">
+            <input
+              type="checkbox"
+              id="ignore-www-setting"
+              data-bind-setting="ignoreWww"
+            />
+            <label for="ignore-www-setting" class="setting-label"
+              >__MSG_ignoreWwwSubdomain__</label
+            >
+            <div class="setting-description">__MSG_removeWwwDesc__</div>
+          </div>
+
+          <!-- Temporary trust default duration -->
+          <div class="setting-wrap">
+            <label for="expires-default-duration" class="setting-label"
+              >__MSG_tempTrustDuration__</label
+            >
+            <select
+              id="expires-default-duration"
+              data-bind-setting="tempTrustDuration"
+            >
+              <option value="1">1 __MSG_minute__</option>
+              <option value="5">5 __MSG_minutes__</option>
+              <option value="10">10 __MSG_minutes__</option>
+              <option value="30">30 __MSG_minutes__</option>
+              <option value="60">60 __MSG_minutes__</option>
+              <option value="90">90 __MSG_minutes__</option>
+              <option value="1440">24 __MSG_hours__</option>
+            </select>
+            <div class="setting-description">__MSG_tempTrustDurationDesc__</div>
+          </div>
+
+          <!-- Temporarily trust by default -->
+          <div class="setting-wrap">
+            <input
+              type="checkbox"
+              id="temp-trust-by-default-setting"
+              data-bind-setting="tempTrustByDefault"
+            />
+            <label for="temp-trust-by-default-setting" class="setting-label"
+              >__MSG_tempTrustDefault__</label
+            >
+            <div class="setting-description">__MSG_tempTrustDefaultDesc__</div>
+          </div>
+
+          <div class="setting-group-title">__MSG_importExportSync__</div>
+
+          <!-- Import trusted domains button -->
+          <div class="setting-wrap">
+            <input type="file" id="import-domains-file" />
+            <button id="import-domains-button">
+              __MSG_importTrustedDomains__
+            </button>
+            <div class="setting-description">
+              __MSG_importTrustedDomainsDesc__
+            </div>
+          </div>
+
+          <!-- Export trusted domains button -->
+          <div class="setting-wrap">
+            <button id="export-domains-button">
+              __MSG_exportTrustedDomains__
+            </button>
+            <div class="setting-description">
+              __MSG_exportTrustedDomainsDesc__
+            </div>
+          </div>
+
+          <div class="setting-group-title">__MSG_resetSettingsTitle__</div>
+
+          <!-- Reset trust button -->
+          <div class="setting-wrap">
+            <button id="reset-trusted-domains-button">
+              __MSG_resetTrustedDomains__
+            </button>
+            <div class="setting-description">
+              __MSG_resetTrustedDomainsDesc__
+            </div>
+          </div>
+
+          <!-- Reset settings button -->
+          <div class="setting-wrap">
+            <button id="reset-settings-button">__MSG_resetSettings__</button>
+            <div class="setting-description">__MSG_resetSettingsDesc__</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- About section -->
+      <div class="section" id="about-section">
+        <div id="main-image-wrap">
+          <img id="main-image" src="../art/browser-guard.svg" />
+        </div>
+        <h1>__MSG_extensionName__</h1>
+        <h2>__MSG_version__ <span id="about-version">TBD</span></h2>
+        <div>__MSG_extensionTagline__</div>
+        <br />
+        <div>
+          __MSG_viewSource__
+          <a
+            href="https://github.com/PhishAnatomy/Browser-Guard"
+            target="_blank"
+            >GitHub</a
+          >.
+        </div>
+        <br />
+        <div>
+          __MSG_createdBy__
+          <a href="https://twitter.com/jdgregson" target="_blank">@jdgregson</a>
+          __MSG_for__
+          <a href="https://phishanatomy.com" target="_blank">PhishAnatomy</a>.
+        </div>
+        <br />
+
+        <br />
+        <div id="license">
+          <span>__MSG_licenseBlock1__</span>
+          <br /><br />
+          <span>__MSG_licenseBlock2__</span>
+          <br /><br />
+          <span
+            >__MSG_licenseBlock3__
+            <a href="https://www.gnu.org/licenses/"
+              >https://www.gnu.org/licenses/</a
+            >.</span
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

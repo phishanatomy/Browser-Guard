@@ -1,0 +1,128 @@
+#main-image-wrap {
+  padding: 20px 0;
+}
+
+#content {
+  padding: 15px 100px;
+}
+
+@media (max-width: 700px) {
+  #content {
+    padding: 15px;
+  }
+}
+
+#main-image {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  display: block;
+}
+
+#blocked-reason {
+  width: 100%;
+  text-align: center;
+}
+
+#blocked-explanation {
+  margin-top: 30px;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+#blocked-domain-name {
+  font-weight: bold;
+  word-wrap: anywhere;
+}
+
+#blocked-url {
+  width: calc(100% - 60px);
+  cursor: default;
+}
+
+#copy-url {
+  width: 42px;
+  height: 27px;
+  float: right;
+}
+
+.action-button {
+  display: inline-block;
+  font-weight: bold;
+}
+
+button#temp-trust-domain {
+  float: right;
+  margin-right: 10px;
+}
+
+button#trust-domain {
+  float: right;
+}
+
+#trust-action-group {
+  float: right;
+}
+
+#trust-subdomains-wrap {
+  padding-top: 47px;
+}
+
+#trust-subdomains-wrap * {
+  display: inline-block;
+}
+
+@media (max-width: 500px) {
+  .action-button {
+    width: 210px;
+    text-align: center;
+    float: none !important;
+    display: block;
+    margin: 18px auto 0 auto !important;
+  }
+
+  #trust-action-group {
+    width: 100%;
+    float: none !important;
+  }
+
+  #trust-subdomains-wrap {
+    padding-top: 18px;
+    text-align: center;
+  }
+}
+
+#details-wrap {
+  display: block;
+  clear: both;
+}
+
+#details-toggle {
+  text-decoration: underline;
+  cursor: pointer;
+  color: rgb(115, 115, 252);
+  user-select: none;
+  -moz-user-select: none;
+}
+
+.details-row {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.details-row:hover {
+  background-color: #efefef;
+}
+
+.details-title {
+  display: table-cell;
+  width: 120px;
+  vertical-align: middle;
+}
+
+.details-value {
+  display: table-cell;
+  font-family: 'Courier New', Courier, monospace;
+  padding-left: 5px;
+  word-wrap: anywhere;
+}

@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "strictNullChecks": true,
+    "typeRoots": ["node_modules/@types"],
+    "types": ["chrome", "firefox-webext-browser"]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "__MSG_extensionName__",
+  "description": "__MSG_extensionDescription__",
+  "default_locale": "en",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "content_security_policy": "default-src \u0027self\u0027;",
+  "icons": {
+    "16": "art/browser-guard.svg",
+    "24": "art/browser-guard.svg",
+    "32": "art/browser-guard.svg",
+    "48": "art/browser-guard.svg",
+    "64": "art/browser-guard.svg",
+    "128": "art/browser-guard.svg",
+    "256": "art/browser-guard.svg"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "art/browser-guard.svg",
+      "24": "art/browser-guard.svg",
+      "32": "art/browser-guard.svg",
+      "48": "art/browser-guard.svg",
+      "64": "art/browser-guard.svg"
+    },
+    "default_popup": "html/popup.html"
+  },
+  "permissions": [
+    "tabs",
+    "webRequest",
+    "history",
+    "webRequestBlocking",
+    "storage",
+    "\u003call_urls\u003e"
+  ],
+  "background": {
+    "page": "html/background.html",
+    "persistent": true
+  }
+}

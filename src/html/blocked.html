@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Browser Guard</title>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="../art/browser-guard.svg" />
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="stylesheet" href="../css/blocked.css" />
+    <script src="../ts/l10n.js"></script>
+    <script src="../ts/config.js"></script>
+    <script src="../ts/common.js"></script>
+    <script src="../ts/blocked.js"></script>
+  </head>
+  <body>
+    <div id="heading-wrap">
+      <div id="heading">
+        <div id="heading-text-wrap">
+          <span>__MSG_extensionName__</span>
+        </div>
+        <div id="heading-settings-wrap">
+          <a href="settings.html" target="_blank">
+            <img id="heading-settings" src="../art/cog.svg" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div id="main-image-wrap">
+        <svg id="main-image" width="100%" height="100%" viewBox="0 0 256 256">
+          <g transform="matrix(0.383985,0,0,0.383985,244.115,233.325)">
+            <path
+              id="main-image-left"
+              d="M0,-548.695L-302.396,-603.125L-302.396,54.539C-302.396,54.539 -128.928,13.396 -38.928,-190.602C11.964,-305.958 0,-548.695 0,-548.695Z"
+              fill="#d5d5d5"
+            />
+          </g>
+          <g transform="matrix(-0.383985,0,0,0.383985,11.8843,233.325)">
+            <path
+              id="main-image-right"
+              d="M0,-548.695L-302.396,-603.125L-302.396,54.539C-302.396,54.539 -128.928,13.396 -38.928,-190.602C11.964,-305.958 0,-548.695 0,-548.695Z"
+              fill="#eaeaea"
+            />
+          </g>
+        </svg>
+      </div>
+      <h1 id="blocked-reason"></h1>
+      <div id="blocked-information-wrap">
+        <div id="blocked-explanation"></div>
+        <div class="url-wrap">
+          <input class="inline" type="text" id="blocked-url" readonly />
+          <button class="inline" id="copy-url">__MSG_copy__</button>
+        </div>
+      </div>
+      <br />
+      <button class="action-button" id="to-safety">__MSG_backToSafety__</button>
+      <div id="trust-action-group">
+        <button class="action-button" id="trust-domain">
+          __MSG_trustAndContinue__
+        </button>
+        <button class="action-button" id="temp-trust-domain">
+          __MSG_tempTrustAndContinue__
+        </button>
+        <div id="trust-subdomains-wrap">
+          <input type="checkbox" id="trust-subdomains" />
+          <label for="trust-subdomains">__MSG_alsoTrustSubdomains__</label>
+        </div>
+      </div>
+      <div id="details-wrap">
+        <div id="details-toggle">__MSG_details__</div>
+        <div id="details" class="hide">
+          <div class="details-row">
+            <span class="details-title">__MSG_requestUrl__</span>
+            <span class="details-value" id="details-request-url"></span>
+          </div>
+          <div class="details-row">
+            <span class="details-title">__MSG_originUrl__</span>
+            <span class="details-value" id="details-origin-url"></span>
+          </div>
+          <div class="details-row">
+            <span class="details-title">__MSG_method__</span>
+            <span class="details-value" id="details-method"></span>
+          </div>
+          <div class="details-row">
+            <span class="details-title">__MSG_urlClassifications__</span>
+            <span class="details-value" id="details-url-classification"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
