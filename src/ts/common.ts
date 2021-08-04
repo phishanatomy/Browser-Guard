@@ -18,7 +18,7 @@ const bind = (id: string, event: string, callback: (arg: any) => any): void => {
   if (target) {
     target.addEventListener(event, callback);
   }
-}
+};
 
 /**
  * Returns a new ID. IDs are random, but not guaranteed to be unique.
@@ -36,6 +36,16 @@ const newId = (): string => {
  */
 const isFirefox = (): boolean => {
   return navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+};
+
+/**
+ * Checks if the current browser is Chrome based on the definition of
+ * window.chrome.
+ *
+ * @return {boolean} Whether or not the current browser is Firefox.
+ */
+const isChrome = (): boolean => {
+  return !!window.chrome;
 };
 
 /**
@@ -206,7 +216,7 @@ const setMainImageColor = (
  */
 const fixPopupHorizontalScroll = (): void => {
   const content = document.getElementById('content');
-  if (content) {
+  if (content && isFirefox()) {
     const layoutPadding = () => {
       if (document.documentElement.scrollHeight > window.innerHeight) {
         content.classList.add('pad');

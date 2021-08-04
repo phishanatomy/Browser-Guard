@@ -37,3 +37,16 @@ const RED_DARK = '#a82121';
 const RED_LIGHT = '#c64f4f';
 const GRAY_DARK = '#d5d5d5';
 const GRAY_LIGHT = '#eaeaea';
+
+// Browser and Extension protocols. These are URL prefixes which are part of the
+// browser of an extension, and will never be blocked.
+const BROWSER_PROTOCOLS = [
+  'about:',
+  'chrome:',
+  'edge:',
+];
+const EXTENSION_PROTOCOLS = [
+  'moz-extension:',
+  'chrome-extension:',
+  'extension:',
+];

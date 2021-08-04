@@ -221,6 +221,13 @@ const loadTrustedDomainsList = (
 };
 
 window.addEventListener('load', () => {
+  // Detect browser for quirks fixes
+  if (isFirefox()) {
+    document.body.classList.add('firefox');
+  } else if (isChrome()) {
+    document.body.classList.add('chrome');
+  }
+
   // Bind tabs
   const tabs = document.querySelectorAll('.tab');
   const sections = document.querySelectorAll('.section');

@@ -6,21 +6,21 @@
   "manifest_version": 2,
   "content_security_policy": "default-src \u0027self\u0027;",
   "icons": {
-    "16": "art/browser-guard.svg",
-    "24": "art/browser-guard.svg",
-    "32": "art/browser-guard.svg",
-    "48": "art/browser-guard.svg",
-    "64": "art/browser-guard.svg",
-    "128": "art/browser-guard.svg",
-    "256": "art/browser-guard.svg"
+    "16": "art/browser-guard-16.png",
+    "24": "art/browser-guard-24.png",
+    "32": "art/browser-guard-32.png",
+    "48": "art/browser-guard-48.png",
+    "64": "art/browser-guard-64.png",
+    "128": "art/browser-guard-128.png",
+    "256": "art/browser-guard-256.png"
   },
   "browser_action": {
     "default_icon": {
-      "16": "art/browser-guard.svg",
-      "24": "art/browser-guard.svg",
-      "32": "art/browser-guard.svg",
-      "48": "art/browser-guard.svg",
-      "64": "art/browser-guard.svg"
+      "16": "art/browser-guard-16.png",
+      "24": "art/browser-guard-24.png",
+      "32": "art/browser-guard-32.png",
+      "48": "art/browser-guard-48.png",
+      "64": "art/browser-guard-64.png"
     },
     "default_popup": "html/popup.html"
   },
@@ -35,5 +35,8 @@
   "background": {
     "page": "html/background.html",
     "persistent": true
-  }
+  },
+  "web_accessible_resources": [
+    "html/blocked.html"
+  ]
 }

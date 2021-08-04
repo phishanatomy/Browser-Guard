@@ -172,15 +172,15 @@ const blocked_onLoad = (): void => {
     'details-url-classification'
   );
   if (detailsUrlClassification) {
-    if (urlClassification) {
+    if (urlClassification && urlClassification !== 'undefined') {
       urlClassification = JSON.parse(urlClassification);
+      let urlClassificationText: string[] = [];
+      Object.keys(urlClassification).forEach((party) => {
+        const classifications = urlClassification[party].join(', ');
+        urlClassificationText.push(`${party}: ${classifications}`);
+      });
+      detailsUrlClassification.innerText = urlClassificationText.join('\n');
     }
-    let urlClassificationText: string[] = [];
-    Object.keys(urlClassification).forEach((party) => {
-      const classifications = urlClassification[party].join(', ');
-      urlClassificationText.push(`${party}: ${classifications}`);
-    });
-    detailsUrlClassification.innerText = urlClassificationText.join('\n');
   }
 
   setMainImageColor(YELLOW_DARK, YELLOW_LIGHT, true);

@@ -65,9 +65,14 @@
   border-top-left-radius: 5px;
 }
 
-.tab-2,
-.tab-3 {
+.firefox .tab-2,
+.firefox .tab-3 {
   margin-left: -4px;
+}
+
+.chrome .tab-2,
+.chrome .tab-3 {
+  margin-left: -3px;
 }
 
 .tab-3 {

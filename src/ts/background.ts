@@ -15,12 +15,15 @@ const onRequestStart = (
   details: FullWebRequestBodyDetails
 ): chrome.webRequest.BlockingResponse => {
   const requestDomain = new URL(details.url).hostname;
+  const requestProtocol = new URL(details.url).protocol;
   if (
     !isTrustedDomain(
       requestDomain,
       trustedDomains,
       background_settings.ignoreWww
-    )
+    ) &&
+    BROWSER_PROTOCOLS.indexOf(requestProtocol) < 0 &&
+    EXTENSION_PROTOCOLS.indexOf(requestProtocol) < 0
   ) {
     const redirectUrl = getExtensionURL('html/blocked.html');
     const finalUrl = new URL(redirectUrl);

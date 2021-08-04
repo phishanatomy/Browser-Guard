@@ -42,12 +42,6 @@ const displayDomainTrust = (
   getCurrentTab((tab) => {
     const loadedUrl = new URL(tab.url ? tab.url : '');
     const loadedDomain = loadedUrl.hostname;
-    const browserProtocols = ['about:', 'chrome:', 'edge:'];
-    const extensionProtocols = [
-      'moz-extension:',
-      'chrome-extension:',
-      'extension:',
-    ];
     const domainTrustRuleLabel = document.getElementById(
       'domain-trust-rule-label'
     );
@@ -137,11 +131,11 @@ const displayDomainTrust = (
       } else {
         domainTrustLabel.innerText = browser.i18n.getMessage('domainIsTrusted');
       }
-    } else if (browserProtocols.indexOf(loadedUrl.protocol) > -1) {
+    } else if (BROWSER_PROTOCOLS.indexOf(loadedUrl.protocol) > -1) {
       setMainImageColor(BLUE_DARK, BLUE_LIGHT, true);
       domainTrustLabel.innerText = browser.i18n.getMessage('domainIsBrowser');
       domainTrustRuleLabel?.classList.add('hide');
-    } else if (extensionProtocols.indexOf(loadedUrl.protocol) > -1) {
+    } else if (EXTENSION_PROTOCOLS.indexOf(loadedUrl.protocol) > -1) {
       setMainImageColor(BLUE_DARK, BLUE_LIGHT, true);
       domainTrustLabel.innerText = browser.i18n.getMessage('domainIsExtension');
       domainTrustRuleLabel?.classList.add('hide');
