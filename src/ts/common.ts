@@ -5,7 +5,13 @@
  */
 
 /**
+ * Binds a given event listener to the DOM node with the given ID to the given
+ * callback function.
  *
+ * @param {string} id The ID of the DOM node to bind.
+ * @param {string} event The name of the event to bind, i.e. 'click'.
+ * @param {function} callback The function to call when the given event is
+ *     triggered on the given DOM node.
  */
 const bind = (id: string, event: string, callback: (arg: any) => any): void => {
   const target = document.getElementById(id);
