@@ -163,6 +163,18 @@
     "message": "Import trusted domains from a file."
   },
 
+  "noFileSelected": {
+    "message": "No file selected"
+  },
+
+  "invalidFile": {
+    "message": "Invalid file"
+  },
+
+  "thereWasAnError": {
+    "message": "There was an error"
+  },
+
   "exportTrustedDomains": {
     "message": "Export trusted domains"
   },

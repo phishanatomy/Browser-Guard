@@ -280,3 +280,8 @@
   vertical-align: text-bottom;
   padding-left: 5px;
 }
+
+#import-domains-status {
+  color: #c64f4f;
+  padding-left: 5px;
+}

@@ -36,7 +36,5 @@
     "page": "html/background.html",
     "persistent": true
   },
-  "web_accessible_resources": [
-    "html/blocked.html"
-  ]
+  "web_accessible_resources": ["html/blocked.html"]
 }

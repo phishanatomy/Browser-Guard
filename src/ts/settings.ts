@@ -4,13 +4,20 @@
  * License: GPL v3
  */
 
+const importError = {
+  noErrors: 0,
+  errorNoFile: 1,
+  errorInvalidFile: 2,
+  errorGenericError: 3,
+};
+
 /**
  * Imports trusted domains from a JSON-encoded string.
  *
  * @param {string} string The string to import. Should be an array of
  *     TrustedDomain objects as valid JSON.
  */
-const importDomains = (string: string): void => {
+const importDomains = (string: string): number => {
   if (string && string.length > 10) {
     try {
       const domainsToImport = JSON.parse(string);
@@ -32,7 +39,29 @@ const importDomains = (string: string): void => {
         });
         setTrustedDomains(trustedDomains);
       });
-    } catch (e) {}
+      return importError.noErrors;
+    } catch (e) {
+      return importError.errorGenericError;
+    }
+  } else {
+    return importError.errorInvalidFile;
+  }
+};
+
+/**
+ * Shows an error message corresponding to the given import error ID.
+ */
+const showImportError = (errorId: number): void => {
+  const importDomainsStatus = document.getElementById('import-domains-status');
+  if (importDomainsStatus) {
+    if (errorId === importError.errorNoFile) {
+      importDomainsStatus.innerText = browser.i18n.getMessage('noFileSelected');
+    } else if (errorId === importError.errorInvalidFile) {
+      importDomainsStatus.innerText = browser.i18n.getMessage('invalidFile');
+    } else {
+      importDomainsStatus.innerText =
+        browser.i18n.getMessage('thereWasAnError');
+    }
   }
 };
 
@@ -347,13 +376,35 @@ window.addEventListener('load', () => {
 
   // Bind the "Import trusted domains" button
   bind('import-domains-button', 'click', () => {
+    const importDomainsStatus = document.getElementById(
+      'import-domains-status'
+    );
     const importDomainsFile = document.getElementById(
       'import-domains-file'
     ) as HTMLInputElement;
-    if (importDomainsFile && importDomainsFile.files) {
+    let errorId = importError.noErrors;
+    if (
+      importDomainsFile &&
+      importDomainsFile.files &&
+      importDomainsFile.files.length > 0
+    ) {
       readFileInput(importDomainsFile, (contents) => {
-        importDomains(contents);
+        const error = importDomains(contents);
+        if (error !== importError.noErrors) {
+          showImportError(errorId);
+        }
       });
+    } else {
+      errorId = importError.errorNoFile;
+    }
+    if (errorId !== importError.noErrors) {
+      showImportError(errorId);
+    } else if (importDomainsStatus) {
+      importDomainsStatus.innerHTML =
+        '<img class="check" src="../art/check.svg">';
+      self.setTimeout(() => {
+        importDomainsStatus.innerText = '';
+      }, 3000);
     }
   });
 
