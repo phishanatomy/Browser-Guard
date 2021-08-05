@@ -91,7 +91,7 @@ const displayDomainTrust = (
       if (removeTrustButton) {
         if (trustedDomain && typeof trustedDomain !== 'boolean') {
           removeEventListeners(removeTrustButton);
-          removeTrustButton = document.getElementById('remove-trust-domain');
+          removeTrustButton = document.getElementById('remove-trust-button');
           removeTrustButton?.addEventListener('click', () => {
             untrustDomain(trustedDomain.id);
           });
@@ -164,7 +164,7 @@ const bindControls = (): void => {
   }
 
   // Bind "To safety" button
-  bind('to-safety', 'click', () => {
+  bind('to-safety-button', 'click', () => {
     getCurrentTab((tab) => {
       if (tab.id) {
         browser.tabs.reload(tab.id);
@@ -173,7 +173,7 @@ const bindControls = (): void => {
   });
 
   // Bind "Trust temporarily" button
-  bind('temp-trust-domain', 'click', () => {
+  bind('temp-trust-button', 'click', () => {
     getCurrentTab((tab) => {
       let requestedDomain = new URL(tab.url ? tab.url : '').hostname;
       if (popup_settings.ignoreWww) {
@@ -189,7 +189,7 @@ const bindControls = (): void => {
   });
 
   // Bind "Trust permanently" button
-  bind('trust-domain', 'click', () => {
+  bind('trust-domain-button', 'click', () => {
     getCurrentTab((tab) => {
       let requestedDomain = new URL(tab.url ? tab.url : '').hostname;
       if (popup_settings.ignoreWww) {
