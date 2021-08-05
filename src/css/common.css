@@ -116,14 +116,32 @@ button {
   cursor: pointer;
 }
 
-button#temp-trust-domain {
+button:hover {
+  opacity: 0.7;
+}
+
+button:active {
+  background-color: #eee;
+}
+
+button.negative {
   background-color: #fff;
   border: 1px solid #db2d2d;
   color: #db2d2d;
 }
 
-button#trust-domain {
+button.negative:active {
+  background-color: #db2d2d;
+  color: #fff;
+}
+
+button.negative-strong {
   background-color: #d70000;
   border: 1px solid #d70000;
   color: #fff;
+}
+
+button.negative-strong:active {
+  background-color: #fff;
+  color: #db2d2d;
 }

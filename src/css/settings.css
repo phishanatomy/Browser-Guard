@@ -273,3 +273,10 @@
 #license a {
   font-family: 'Courier New', Courier, monospace;
 }
+
+.check {
+  width: 18px;
+  height: 18px;
+  vertical-align: text-bottom;
+  padding-left: 5px;
+}

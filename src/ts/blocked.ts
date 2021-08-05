@@ -89,7 +89,7 @@ const blocked_onLoad = (): void => {
   }
 
   // Bind the "Copy" button
-  bind('copy-url', 'click', () => {
+  bind('copy-url-button', 'click', () => {
     const blockedUrlInput = document.getElementById(
       'blocked-url'
     ) as HTMLInputElement;
@@ -101,7 +101,7 @@ const blocked_onLoad = (): void => {
   });
 
   // Bind the "Back to safety" button
-  bind('to-safety', 'click', () => {
+  bind('to-safety-button', 'click', () => {
     setMainImageColor(BLUE_DARK, BLUE_LIGHT);
     history.back();
   });
@@ -115,7 +115,7 @@ const blocked_onLoad = (): void => {
   }
 
   // Bind the "Temporarily trust and continue" button
-  bind('temp-trust-domain', 'click', () => {
+  bind('temp-trust-button', 'click', () => {
     let hostname = new URL(requestUrl).hostname;
     if (blocked_settings.ignoreWww && hostname.indexOf('www.') === 0) {
       hostname = hostname.replace('www.', '');
@@ -135,7 +135,7 @@ const blocked_onLoad = (): void => {
   });
 
   // Bind the "Trust and continue" button
-  bind('trust-domain', 'click', () => {
+  bind('trust-domain-button', 'click', () => {
     let hostname = new URL(requestUrl).hostname;
     if (blocked_settings.ignoreWww && hostname.indexOf('www.') === 0) {
       hostname = hostname.replace('www.', '');

@@ -167,10 +167,14 @@ const bindAddTrustedDomainForm = (): void => {
 };
 
 /**
- * Binds settings to the settings form items.
+ * Sets the value of items in the settings form to match their associated saved
+ * setting.
+ *
+ * @param {BrowserGuardSettings} settings? Settings to apply. Optional. If
+ *     omitted, settings will be fetched before applying them.
  */
-const bindSettingsForm = (): void => {
-  getSettings((settings) => {
+const bindSettingsFormValues = (settings?: BrowserGuardSettings): void => {
+  const bindForm = (settings: BrowserGuardSettings): void => {
     const settingsKeys = Object.keys(settings);
     const settingsToBind = document.querySelectorAll(
       '[data-bind-setting]'
@@ -181,6 +185,42 @@ const bindSettingsForm = (): void => {
         if (settingsKeys.indexOf(boundSetting) > -1) {
           if (settingToBind.type === 'checkbox') {
             settingToBind.checked = settings[boundSetting];
+          } else {
+            settingToBind.value = settings[boundSetting];
+          }
+        } else {
+          console.warn(
+            `Cannot bind setting value, ${boundSetting} is not defined.`
+          );
+        }
+      }
+    });
+  };
+
+  if (typeof settings !== 'undefined') {
+    bindForm(settings);
+  } else {
+    getSettings((settings) => {
+      bindForm(settings);
+    });
+  }
+};
+
+/**
+ * Binds event listeners on settings form items such that they change the
+ * associated saved setting.
+ */
+const bindSettingsFormEvents = (): void => {
+  getSettings((settings) => {
+    const settingsKeys = Object.keys(settings);
+    const settingsToBind = document.querySelectorAll(
+      '[data-bind-setting]'
+    ) as NodeListOf<HTMLInputElement>;
+    settingsToBind.forEach((settingToBind) => {
+      if (settingToBind.dataset.bindSetting) {
+        const boundSetting = settingToBind.dataset.bindSetting;
+        if (settingsKeys.indexOf(boundSetting) > -1) {
+          if (settingToBind.type === 'checkbox') {
             settingToBind.addEventListener('change', (event) => {
               getSettings((settings) => {
                 settings[boundSetting] = settingToBind.checked;
@@ -188,7 +228,6 @@ const bindSettingsForm = (): void => {
               });
             });
           } else {
-            settingToBind.value = settings[boundSetting];
             settingToBind.addEventListener('change', () => {
               getSettings((settings) => {
                 settings[boundSetting] = settingToBind.value;
@@ -197,7 +236,9 @@ const bindSettingsForm = (): void => {
             });
           }
         } else {
-          console.warn(`Cannot bind setting, ${boundSetting} is not defined.`);
+          console.warn(
+            `Cannot bind setting event, ${boundSetting} is not defined.`
+          );
         }
       }
     });
@@ -245,14 +286,18 @@ window.addEventListener('load', () => {
   });
 
   bindAddTrustedDomainForm();
-  bindSettingsForm();
+  bindSettingsFormValues();
+  bindSettingsFormEvents();
 
   // Reload elements when settings change
   browser.storage.onChanged.addListener((changes, areaName) => {
     const keys = Object.keys(changes);
     if (areaName === 'local' && keys.indexOf(STORAGE_SETTINGS) > -1) {
       bindAddTrustedDomainForm();
-      bindSettingsForm();
+      let newSettings = changes[STORAGE_SETTINGS].newValue;
+      try {
+        bindSettingsFormValues(JSON.parse(newSettings));
+      } catch (e) {}
     }
   });
 
@@ -329,13 +374,35 @@ window.addEventListener('load', () => {
 
   // Bind the "Reset trusted domains" button
   bind('reset-trusted-domains-button', 'click', () => {
-    const setting = {};
-    setting[STORAGE_TRUSTED_DOMAINS] = {};
-    browser.storage.local.set(setting);
+    if (confirm(browser.i18n.getMessage('resetTrustedDomainsConfirm'))) {
+      const setting = {};
+      setting[STORAGE_TRUSTED_DOMAINS] = JSON.stringify([]);
+      browser.storage.local.set(setting);
+      const check = document.getElementById('reset-trusted-domains-check');
+      if (check) {
+        check.classList.remove('hide');
+        self.setTimeout(() => {
+          check.classList.add('hide');
+        }, 3000);
+      }
+    }
   });
 
   // Bind the "Reset settings" button
   bind('reset-settings-button', 'click', () => {
-    browser.storage.local.remove(STORAGE_SETTINGS);
+    if (confirm(browser.i18n.getMessage('resetSettingsConfirm'))) {
+      const setting = {};
+      setting[STORAGE_SETTINGS] = JSON.stringify(
+        DEFAULT_BROWSER_GUARD_SETTINGS
+      );
+      browser.storage.local.set(setting);
+      const check = document.getElementById('reset-settings-check');
+      if (check) {
+        check.classList.remove('hide');
+        self.setTimeout(() => {
+          check.classList.add('hide');
+        }, 3000);
+      }
+    }
   });
 });

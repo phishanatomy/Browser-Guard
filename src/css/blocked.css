@@ -40,10 +40,11 @@
   cursor: default;
 }
 
-#copy-url {
+#copy-url-button {
   width: 42px;
   height: 27px;
   float: right;
+  line-height: 0;
 }
 
 .action-button {
@@ -51,12 +52,12 @@
   font-weight: bold;
 }
 
-button#temp-trust-domain {
+button#temp-trust-button {
   float: right;
   margin-right: 10px;
 }
 
-button#trust-domain {
+button#trust-domain-button {
   float: right;
 }
 

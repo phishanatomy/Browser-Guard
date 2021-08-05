@@ -183,12 +183,20 @@
     "message": "Remove all trusted domains and add default trusted domains (if any)."
   },
 
+  "resetTrustedDomainsConfirm": {
+    "message": "Are you sure you want to reset trusted domains?"
+  },
+
   "resetSettings": {
     "message": "Reset settings"
   },
 
   "resetSettingsDesc": {
     "message": "Reset all settings to default (excluding trusted domains)."
+  },
+
+  "resetSettingsConfirm": {
+    "message": "Are you sure you want to reset all settings?"
   },
 
   "version": {
