@@ -5,13 +5,13 @@
  */
 
 /**
- * Binds a given event listener to the DOM node with the given ID to the given
- * callback function.
+ * Binds the given event on the DOM node with the given ID to the given callback
+ * function.
  *
  * @param {string} id The ID of the DOM node to bind.
  * @param {string} event The name of the event to bind, i.e. 'click'.
  * @param {function} callback The function to call when the given event is
- *     triggered on the given DOM node.
+ *     triggered on the DOM node with the given ID.
  */
 const bind = (id: string, event: string, callback: (arg: any) => any): void => {
   const target = document.getElementById(id);
@@ -42,7 +42,7 @@ const isFirefox = (): boolean => {
  * Checks if the current browser is Chrome based on the definition of
  * window.chrome.
  *
- * @return {boolean} Whether or not the current browser is Firefox.
+ * @return {boolean} Whether or not the current browser is Chrome.
  */
 const isChrome = (): boolean => {
   return !!window.chrome;
