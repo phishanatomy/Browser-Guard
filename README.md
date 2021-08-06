@@ -8,6 +8,10 @@ Protect browsers from accessing untrusted websites. A browser extension for the 
 ## How it Works
 Browser Guard intercepts all top-level navigation requests and checks if the destination is on your list of trusted domains. If it is not found, the request is blocked, and you're given the option to temporarily or permanently trust the domain.
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/3778841/128482235-e00e91b8-00f1-4bc5-be85-0e93680f1e93.png" alt="Browser Guard block page">
+</p>
+
 ## How to Install Browser Guard
 Browser Guard is currently pending in several browser extension stores. A direct link will be provided here once it is listed there. For now, you can download one of the releases and manually install it in your browser of choice, assuming you use one of the following:
  - Firefox
