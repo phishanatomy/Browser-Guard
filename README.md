@@ -17,4 +17,4 @@ Browser Guard is currently pending in several browser extension stores. A direct
 You can also clone the repository, build the TypeScript files yourself, and install the extension using the `/src` directory in your repository.
 
 ## Privacy
-Browser Guard takes your privacy seriously. No data is collected by Browser Guard at any point, an no connections are ever made to any remote servers.
+Browser Guard takes your privacy seriously. No data is collected by Browser Guard at any point, and no connections are ever made to any remote servers.
