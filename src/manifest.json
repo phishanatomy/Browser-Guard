@@ -27,7 +27,6 @@
   "permissions": [
     "tabs",
     "webRequest",
-    "history",
     "webRequestBlocking",
     "storage",
     "\u003call_urls\u003e"
