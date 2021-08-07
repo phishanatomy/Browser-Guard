@@ -13,12 +13,23 @@ Browser Guard intercepts all top-level navigation requests and checks if the des
 </p>
 
 ## How to Install Browser Guard
-Browser Guard is currently pending in several browser extension stores. A direct link will be provided here once it is listed there. For now, you can download one of the releases and manually install it in your browser of choice, assuming you use one of the following:
- - Firefox
- - Chrome
- - A Chrome-based browser
 
-You can also clone the repository, build the TypeScript files yourself, and install the extension using the `/src` directory in your repository.
+### [Firefox](https://addons.mozilla.org/en-US/firefox/addon/browser-guard/)
+You can install Browser Guard for Firefox by installing the [Browser Guard](https://addons.mozilla.org/en-US/firefox/addon/browser-guard/) addon from the Mozilla addon store.
+
+### Chrome (and Chromium-based)
+You can install Browser Guard in Chrome and other Chromium-based browsers by loading it as an unpacked extension using the following steps:
+
+ 1) Download the ZIP file for the latest release of Browser Guard from [releases](https://github.com/phishanatomy/Browser-Guard/releases).
+ 2) Extract the ZIP file to a directory like `C:\users\<your name>\Documents\extensions\Browser Guard`.
+ 3) Open Chrome and access your extension settings, either by navigating to `Settings` > `Extensions`, or by entering `chrome://extensions` in the URL bar.
+ 4) Enable the "Developer mode" switch.
+ 5) Click the "Load unpacked" button.
+ 6) Browse to the directory where you extracted the extension, e.g. `C:\users\<your name>\Documents\extensions\Browser Guard`. Make sure you're in the same directory as the `manifest.json` fil.
+ 7) Click the "Select Folder" button.
+
+### Others
+For all other browsers which support [WebExtensions](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions), you can build the TypeScript files yourself, and install the extension using the `/src` directory in your repository.
 
 ## Privacy
 Browser Guard takes your privacy seriously. No data is collected by Browser Guard at any point, and no connections are ever made to any remote servers.
