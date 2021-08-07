@@ -25,7 +25,7 @@ You can install Browser Guard in Chrome and other Chromium-based browsers by loa
  3) Open Chrome and access your extension settings, either by navigating to `Settings` > `Extensions`, or by entering `chrome://extensions` in the URL bar.
  4) Enable the "Developer mode" switch.
  5) Click the "Load unpacked" button.
- 6) Browse to the directory where you extracted the extension, e.g. `C:\users\<your name>\Documents\extensions\Browser Guard`. Make sure you're in the same directory as the `manifest.json` fil.
+ 6) Browse to the directory where you extracted the extension, e.g., `C:\users\<your name>\Documents\extensions\Browser Guard`. Make sure you're in the same directory as the `manifest.json` file.
  7) Click the "Select Folder" button.
 
 ### Others
