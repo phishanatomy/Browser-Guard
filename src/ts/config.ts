@@ -10,6 +10,7 @@ const STORAGE_TRUSTED_DOMAINS = 'trustedDomains';
 // Key used to store and access settings in local storage
 const STORAGE_SETTINGS = 'settings';
 
+// Default BrowserGuardSettings object
 const DEFAULT_BROWSER_GUARD_SETTINGS = {
   // Whether to remove "www." from domains before trusting them and to ignore
   // the "www" subdomain such that trusting "example.com" also trusts
@@ -39,7 +40,7 @@ const GRAY_DARK = '#d5d5d5';
 const GRAY_LIGHT = '#eaeaea';
 
 // Browser and Extension protocols. These are URL prefixes which are part of the
-// browser of an extension, and will never be blocked.
+// browser or an extension and will never be blocked.
 const BROWSER_PROTOCOLS = [
   'about:',
   'chrome:',

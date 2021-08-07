@@ -50,6 +50,8 @@ const importDomains = (string: string): number => {
 
 /**
  * Shows an error message corresponding to the given import error ID.
+ *
+ * @param {number} errorId The ID of the import error to show.
  */
 const showImportError = (errorId: number): void => {
   const importDomainsStatus = document.getElementById('import-domains-status');
@@ -147,11 +149,7 @@ const getTrustedDomainListRow = (
 };
 
 /**
- * Returns a form used to create a new trusted domain list row with all of the
- * buttons and controls bound.
- *
- * @return {HTMLDivElement} The new form as a list row with all of the buttons
- *     and controls bound.
+ * Binds buttons and inputs for the "Add Trusted Domain" form.
  */
 const bindAddTrustedDomainForm = (): void => {
   getSettings((settings) => {
