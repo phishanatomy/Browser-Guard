@@ -112,7 +112,7 @@
   },
 
   "addTrust": {
-    "message": "Add Trust"
+    "message": "Add trust"
   },
 
   "trustSettings": {
@@ -240,7 +240,7 @@
   },
 
   "removeTrust": {
-    "message": "Remove Trust"
+    "message": "Remove trust"
   },
 
   "noTrustedDomainsFound": {
