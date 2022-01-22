@@ -1,6 +1,6 @@
 {
   "name": "browser-guard",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Protect browsers from accessing untrusted websites. A browser extension for the paranoid.",
   "dependencies": {},
   "devDependencies": {
