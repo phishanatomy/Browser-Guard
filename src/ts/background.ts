@@ -51,7 +51,7 @@ getSettings((storedSettings) => {
   background_settings = storedSettings;
 });
 
-// Reload settings when they are changes
+// Reload settings when they are changed
 browser.storage.onChanged.addListener((changes, areaName) => {
   const keys = Object.keys(changes);
   if (areaName === 'local' && keys.indexOf(STORAGE_SETTINGS) > -1) {

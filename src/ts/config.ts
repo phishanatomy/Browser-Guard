@@ -45,7 +45,7 @@ const BROWSER_PROTOCOLS = [
   'about:',
   'chrome:',
   'edge:',
-  'file',
+  'file:',
 ];
 const EXTENSION_PROTOCOLS = [
   'moz-extension:',
